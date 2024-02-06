@@ -14,7 +14,7 @@ public class StudentDTO {
     private Long id;
     private String name;
     private TeacherDTO teacher;
-    private GradesDTO grades;
+    private GradeDTO grade;
 
 
     // Constructors, getters, setters, etc.

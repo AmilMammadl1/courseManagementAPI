@@ -17,7 +17,8 @@ public class TeacherDTO {
     private String username;
     private String password;
     private List<StudentDTO> students;
-    private List<GradesDTO> grades;
+    private List<GradeDTO> grades;
+
 
     // Constructors, getters, setters, etc.
 }

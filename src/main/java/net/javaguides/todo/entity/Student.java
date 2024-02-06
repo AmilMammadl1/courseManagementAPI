@@ -24,7 +24,7 @@ public class Student {
     private String password;
 
     @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
-    private Grades grades;
+    private Grade grade;
     @ManyToOne
     @JoinColumn(name = "teacher_id")
     private Teacher teacher;

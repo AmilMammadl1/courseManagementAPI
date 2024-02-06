@@ -29,6 +29,6 @@ public class Teacher {
     private List<Student> students;
 
     @OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL)
-    private List<Grades> grades;
+    private List<Grade> grades;
 
 }

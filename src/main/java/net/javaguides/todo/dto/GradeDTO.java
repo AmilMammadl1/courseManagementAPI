@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class GradesDTO {
+public class GradeDTO {
 
     private Long id;
     private String subject;
