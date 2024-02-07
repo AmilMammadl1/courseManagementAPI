@@ -15,5 +15,5 @@ public class TeacherRequestDTO {
     private String username;
     private String password;
     private List<StudentRequestDTO> students;
-    private List<GradeResponseDTO> grades;
+    private List<GradeRequestDTO> grades;
 }

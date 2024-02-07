@@ -13,6 +13,6 @@ import net.javaguides.todo.dto.response.TeacherResponseDTO;
 public class GradeRequestDTO {
     private String subject;
     private Double grade;
-    private TeacherResponseDTO teacher;
+    private TeacherRequestDTO teacher;
     private StudentRequestDTO student;
 }

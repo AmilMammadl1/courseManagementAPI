@@ -70,6 +70,8 @@ public class TeacherServiceImpl implements TeacherService {
                 .collect(Collectors.toList());
 
         teacher.setStudents(students);
+        teacher.setUsername(teacherRequestDTO.getUsername());
+        teacher.setPassword(teacherRequestDTO.getPassword());
 
         Teacher updatedTeacher = teacherRepository.save(teacher);
         TeacherResponseDTO teacherResponseDTO = modelMapper.map(updatedTeacher, TeacherResponseDTO.class);
