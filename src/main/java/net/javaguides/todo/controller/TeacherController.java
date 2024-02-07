@@ -60,7 +60,7 @@ public class TeacherController {
     @DeleteMapping("/api/teacher/{id}")
     public ResponseEntity<String> deleteTeacher(@PathVariable("id") Long teacherId){
         teacherService.deleteTeacher(teacherId);
-        return new ResponseEntity<>("Todo deleted successfully!.", HttpStatus.OK);
+        return new ResponseEntity<>("Teacher deleted successfully!.", HttpStatus.OK);
     }
 }
 

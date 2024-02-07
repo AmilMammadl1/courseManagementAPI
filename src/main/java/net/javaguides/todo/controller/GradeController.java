@@ -29,6 +29,17 @@ public class GradeController {
         List<GradeResponseDTO> allGrades = gradeService.getAllGrades();
         return new ResponseEntity<>(allGrades, HttpStatus.OK);
     }
+    @GetMapping("/by-student/{studentId}")
+    public ResponseEntity<List<GradeResponseDTO>> getGradesByStudent(@PathVariable("studentId") Long studentId) {
+        List<GradeResponseDTO> gradesResponseDTOByStudentId = gradeService.getGradesByStudent(studentId);
+        return new ResponseEntity<>(gradesResponseDTOByStudentId, HttpStatus.OK);
+    }
+
+    @GetMapping("/by-subject/{subject}")
+    public ResponseEntity<List<GradeResponseDTO>> getGradesBySubject(@PathVariable("subject") String subject) {
+        List<GradeResponseDTO> gradesResponseDTOBySubject = gradeService.getGradesBySubject(subject);
+        return new ResponseEntity<>(gradesResponseDTOBySubject, HttpStatus.OK);
+    }
 
     @PostMapping("api/grade")
     public ResponseEntity<GradeResponseDTO> addGrade(@RequestBody GradeRequestDTO gradeRequestDTO) {
@@ -47,17 +58,7 @@ public class GradeController {
     @DeleteMapping("/api/grade/{id}")
     public ResponseEntity<String> deleteTodo(@PathVariable("id") Long gradeId){
         gradeService.deleteGrade(gradeId);
-        return new ResponseEntity<>("Todo deleted successfully!.", HttpStatus.OK);
-    }
-    @GetMapping("/by-student/{studentId}")
-    public ResponseEntity<List<GradeResponseDTO>> getGradesByStudent(@PathVariable("studentId") Long studentId) {
-        List<GradeResponseDTO> gradesResponseDTOByStudentId = gradeService.getGradesByStudent(studentId);
-        return new ResponseEntity<>(gradesResponseDTOByStudentId, HttpStatus.OK);
+        return new ResponseEntity<>("Grade deleted successfully!.", HttpStatus.OK);
     }
 
-    @GetMapping("/by-subject/{subject}")
-    public ResponseEntity<List<GradeResponseDTO>> getGradesBySubject(@PathVariable("subject") String subject) {
-        List<GradeResponseDTO> gradesResponseDTOBySubject = gradeService.getGradesBySubject(subject);
-        return new ResponseEntity<>(gradesResponseDTOBySubject, HttpStatus.OK);
-    }
 }
