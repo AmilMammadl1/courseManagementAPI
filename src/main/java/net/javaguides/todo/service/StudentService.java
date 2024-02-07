@@ -1,25 +1,24 @@
 package net.javaguides.todo.service;
 
-import net.javaguides.todo.dto.StudentDTO;
-import net.javaguides.todo.dto.TodoDto;
-import net.javaguides.todo.entity.Student;
+import net.javaguides.todo.dto.request.StudentRequestDTO;
+import net.javaguides.todo.dto.response.StudentResponseDTO;
 
 import java.util.List;
 
 public interface StudentService {
 
-    StudentDTO addStudent(StudentDTO studentDTO);
+    StudentResponseDTO addStudent(StudentRequestDTO studentRequestDTO);
 
-    StudentDTO getStudent(Long id);
+    StudentResponseDTO getStudent(Long id);
 
-    List<StudentDTO> getAllStudents();
+    List<StudentResponseDTO> getAllStudents();
 
-    StudentDTO updateStudent(StudentDTO studentDTO, Long id);
+    StudentResponseDTO updateStudent(StudentRequestDTO studentDTO, Long id);
 
     void deleteStudent(Long id);
 
-    List<StudentDTO> getStudentsByTeacher(Long teacherId);
+    List<StudentResponseDTO> getStudentsByTeacher(Long teacherId);
 
-    List<StudentDTO> getStudentsWithGradeAbove(Double grade);
+    List<StudentResponseDTO> getStudentsWithGradeAbove(Double grade);
 
 }

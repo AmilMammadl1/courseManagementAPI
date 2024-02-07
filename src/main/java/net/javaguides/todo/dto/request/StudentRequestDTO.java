@@ -1,24 +1,19 @@
-package net.javaguides.todo.dto;
+package net.javaguides.todo.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
+import net.javaguides.todo.dto.response.GradeResponseDTO;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class TeacherDTO {
+public class StudentRequestDTO {
 
-    private Long id;
     private String username;
     private String password;
-    private List<StudentDTO> students;
-    private List<GradeDTO> grades;
-
-
-    // Constructors, getters, setters, etc.
+    private TeacherRequestDTO teacher;
+    private GradeResponseDTO grade;
 }

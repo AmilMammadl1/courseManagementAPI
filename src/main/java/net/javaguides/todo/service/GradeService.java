@@ -1,22 +1,20 @@
 package net.javaguides.todo.service;
-
-import net.javaguides.todo.dto.GradeDTO;
-import net.javaguides.todo.dto.StudentDTO;
-import net.javaguides.todo.dto.TodoDto;
+import net.javaguides.todo.dto.request.GradeRequestDTO;
+import net.javaguides.todo.dto.response.GradeResponseDTO;
 
 import java.util.List;
 
 public interface GradeService {
-    GradeDTO addGrade(GradeDTO gradeDTO);
+    GradeResponseDTO addGrade(GradeRequestDTO gradeRequestDTO);
 
-    GradeDTO getGrade(Long id);
+    GradeResponseDTO getGrade(Long id);
 
-    List<GradeDTO> getAllGrades();
+    List<GradeResponseDTO> getAllGrades();
 
-    GradeDTO updateGrade(GradeDTO gradeDTO, Long id);
+    GradeResponseDTO updateGrade(GradeRequestDTO gradeRequestDTO, Long id);
 
     void deleteGrade(Long id);
-    List<GradeDTO> getGradesByStudent(Long studentId);
+    List<GradeResponseDTO> getGradesByStudent(Long studentId);
 
-    List<GradeDTO> getGradesBySubject(String subject);
+    List<GradeResponseDTO> getGradesBySubject(String subject);
 }
