@@ -15,8 +15,8 @@ public class StudentResponseDTO {
 
     private Long id;
     private String username;
-    private TeacherRequestDTO teacher;
-    private GradeRequestDTO grade;
+    private TeacherResponseDTO teacher;
+    private GradeResponseDTO grade;
 
 
 }

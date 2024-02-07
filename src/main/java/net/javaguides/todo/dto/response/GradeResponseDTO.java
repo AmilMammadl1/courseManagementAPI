@@ -15,5 +15,5 @@ public class GradeResponseDTO {
     private String subject;
     private Double grade;
     private TeacherResponseDTO teacher;
-    private StudentRequestDTO student;
+    private StudentResponseDTO student;
 }

@@ -16,6 +16,6 @@ import java.util.List;
 public class TeacherResponseDTO {
     private Long id;
     private String username;
-    private List<StudentRequestDTO> students;
-    private List<GradeRequestDTO> grades;
+    private List<StudentResponseDTO> students;
+    private List<GradeResponseDTO> grades;
 }
