@@ -1,10 +1,13 @@
 package net.javaguides.todo.entity;
 
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Setter
 @Getter
@@ -23,10 +26,12 @@ public class Student {
     @Column(nullable = false)
     private String password;
 
-    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
-    private Grade grade;
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    @JsonBackReference
+    private List<Grade> grades;
+
     @ManyToOne
     @JoinColumn(name = "teacher_id")
+//    @JsonIgnore
     private Teacher teacher;
-
 }

@@ -1,5 +1,6 @@
 package net.javaguides.todo.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import net.javaguides.todo.dto.response.TeacherResponseDTO;
 public class GradeResponseDTO {
     private Long id;
     private String subject;
-    private Double grade;
-    private TeacherResponseDTO teacher;
+    private Double score;
+    @JsonIgnoreProperties("grades")  // Add this annotation
     private StudentResponseDTO student;
 }

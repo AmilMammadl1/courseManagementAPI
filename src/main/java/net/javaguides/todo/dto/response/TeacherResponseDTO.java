@@ -17,5 +17,4 @@ public class TeacherResponseDTO {
     private Long id;
     private String username;
     private List<StudentResponseDTO> students;
-    private List<GradeResponseDTO> grades;
 }

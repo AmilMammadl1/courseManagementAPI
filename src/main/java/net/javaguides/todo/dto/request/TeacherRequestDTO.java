@@ -1,5 +1,6 @@
 package net.javaguides.todo.dto.request;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,8 +13,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TeacherRequestDTO {
+    private long id;
     private String username;
     private String password;
     private List<StudentRequestDTO> students;
-    private List<GradeRequestDTO> grades;
 }

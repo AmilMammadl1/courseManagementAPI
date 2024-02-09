@@ -1,5 +1,6 @@
 package net.javaguides.todo.entity;
 
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,13 +22,9 @@ public class Grade {
     private String subject;
 
     @Column(nullable = false)
-    private Double grade;
+    private Double score;
 
-    // Establishing the one-to-one relationship
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "student_id")
     private Student student;
-    @ManyToOne
-    @JoinColumn(name = "teacher_id")
-    private Teacher teacher;
 }

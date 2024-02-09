@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface GradeRepository extends JpaRepository<Grade, Long> {
     @Query("SELECT grade FROM Grade grade WHERE grade.student.id = :studentId")
@@ -13,5 +14,7 @@ public interface GradeRepository extends JpaRepository<Grade, Long> {
 
     @Query("SELECT g FROM Grade g WHERE g.subject = :subject")
     List<Grade> getGradesBySubject(@Param("subject") String subject);
+    Optional<Grade> findByStudentId(Long studentId);
+
 }
 

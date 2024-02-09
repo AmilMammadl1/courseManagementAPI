@@ -10,8 +10,8 @@ import java.util.List;
 
 public interface StudentRepository extends JpaRepository<Student, Long> {
     List<StudentResponseDTO> findByTeacherId(Long teacherId);
+    List<Student> findByGradesScoreGreaterThan(Double score);
 
-    @Query("SELECT s FROM Student s WHERE s.grade.grade > :grade")
-    List<Student> getStudentsWithGradeAbove(@Param("grade") Double grade);
+
 
 }

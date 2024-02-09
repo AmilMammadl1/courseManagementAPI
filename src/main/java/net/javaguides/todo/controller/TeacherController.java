@@ -1,12 +1,11 @@
 package net.javaguides.todo.controller;
 
-import net.javaguides.todo.dto.request.StudentRequestDTO;
 import net.javaguides.todo.dto.request.TeacherRequestDTO;
 import net.javaguides.todo.dto.response.GradeResponseDTO;
 import net.javaguides.todo.dto.response.StudentResponseDTO;
 import net.javaguides.todo.dto.response.TeacherResponseDTO;
-import net.javaguides.todo.service.StudentService;
 import net.javaguides.todo.service.TeacherService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +17,13 @@ import java.util.List;
 public class TeacherController {
     @Autowired
     private TeacherService teacherService;
+    @Autowired
+    private final ModelMapper modelMapper;  // Declare the ModelMapper variable
+
+    public TeacherController(ModelMapper modelMapper) {
+        this.modelMapper = modelMapper;
+    }
+
 
     @GetMapping("/api/teacher/{id}")
     public ResponseEntity<TeacherResponseDTO> getTeacher(@PathVariable("id") Long teacherId) {

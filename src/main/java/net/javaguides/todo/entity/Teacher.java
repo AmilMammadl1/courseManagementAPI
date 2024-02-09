@@ -1,5 +1,6 @@
 package net.javaguides.todo.entity;
 
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,9 +27,6 @@ public class Teacher {
     private String password;
 
     @OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Student> students;
-
-    @OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL)
-    private List<Grade> grades;
-
 }

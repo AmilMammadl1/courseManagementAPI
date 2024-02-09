@@ -1,5 +1,6 @@
 package net.javaguides.todo.dto.request;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,6 @@ import net.javaguides.todo.dto.response.TeacherResponseDTO;
 @AllArgsConstructor
 public class GradeRequestDTO {
     private String subject;
-    private Double grade;
-    private TeacherRequestDTO teacher;
+    private Double score;
     private StudentRequestDTO student;
 }
